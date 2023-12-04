@@ -6,7 +6,11 @@ CREATE TABLE users (
     username VARCHAR(255) NOT NULL,
     nim VARCHAR(20) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'user') NOT NULL
+    role ENUM('admin', 'user') NOT NULL,
+    login_attempts INT(11) DEFAULT 0,
+    remember_me_token VARCHAR(255) DEFAULT NULL,
+    remember_me_expire TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+    csrf_token VARCHAR(64) DEFAULT NULL
 );
 
 CREATE TABLE nilai (
@@ -28,3 +32,4 @@ INSERT INTO users (username, nim, password, role) VALUES ('admin', 'admin123', '
 
 -- User
 INSERT INTO users (username, nim, password, role) VALUES ('user1', 'user123', 'userpassword', 'user');
+
