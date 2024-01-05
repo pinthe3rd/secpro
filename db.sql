@@ -26,10 +26,7 @@ CREATE TABLE dosen (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nama VARCHAR(255) NOT NULL
 );
-
 -- Admin
-INSERT INTO users (username, nim, password, role) VALUES ('admin', 'admin123', 'adminpassword', 'admin');
-
--- User
-INSERT INTO users (username, nim, password, role) VALUES ('user1', 'user123', 'userpassword', 'user');
+INSERT INTO users (username, nim, password, role) VALUES ('admin', 'admin123', '$2y$10$JWtnvTvojKBiyC08cw03vuqstXfvuo7xxk0qqDWzVWK3gy37KBkRO', 'admin'); 
+-- Pass = admin123
 
